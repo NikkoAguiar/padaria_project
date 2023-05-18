@@ -17,7 +17,7 @@ header{
 }
 
 header img{
-    height: 60px;
+    height: 50px;
 }
 
 header h1{
@@ -58,11 +58,33 @@ button:hover{
 #forno_cheio{
     display: none;
     height: 390px;
+    border-radius: 7px;
 }
 
 #forno_vazio{
-    height: 390px;
+    height: 400px;
     display: none;
+    border-radius: 7px;
+}
+
+#estoque{
+    display: none;
+    height: 390px;
+}
+
+#calendario{
+    display: flex;
+    height: 390px;
+}
+
+#caixa{
+    display: none;
+    height: 390px;
+}
+
+#pao_fances{
+    display: none;
+    height: 390px;
 }
 
 p{
