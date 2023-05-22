@@ -5,88 +5,60 @@
     font-family: 'Roboto', sans-serif;
 }
 
-body{
+html{
     background-color: #E9873E;
-    /* padding-top: 100px; */
+    max-width: 1280px;
+    width: 100%;
+    align-items: center;
+    margin: 0 auto;
 }
 
 header{
     display: flex;
-    margin-top: 50px;
     justify-content: center;
-}
-
-header img{
-    height: 50px;
-}
-
-header h1{
+    background-color: #FF7100;
     color: ghostwhite;
 }
 
-.container{
-    display: flex;
-    max-width: 1280px;
-    width: 100%;
-    margin: 0 auto;
-    justify-content: space-evenly;
+header img{
+    height: 40px;
+}
+
+form label{
+    background-color: #FF7100;
+    color: ghostwhite;
+    padding: 8px;
+    border-radius: 5px;
 }
 
 form{
     display: grid;
+    margin-top: 50px;
+    justify-content: center;
+    padding: 8px;
+    margin-bottom: 685px;
+}
+
+form input{
+    border-radius: 5px;
+    border: none;
+    border-bottom: solid 3px;
 }
 
 form button{
-    background-color: #FF7100;
-    color: #FFF;
-    font-size: 20px;
+    border-radius: 5px;
     border: none;
-    border-radius: 7px;
+    background-color: chartreuse;
+    color: white;
     cursor: pointer;
-    padding: 8px;
-    margin-top: 16px;
 }
 
-button:hover{
-    background-color: #FF7B12;
+form button:hover{
+    background-color: green;
 }
 
-.images{
-    display: flex;
-}
-
-#forno_cheio{
-    display: none;
-    height: 390px;
-    border-radius: 7px;
-}
-
-#forno_vazio{
-    height: 400px;
-    display: none;
-    border-radius: 7px;
-}
-
-#estoque{
-    display: none;
-    height: 390px;
-}
-
-#calendario{
-    display: flex;
-    height: 390px;
-}
-
-#caixa{
-    display: none;
-    height: 390px;
-}
-
-#pao_fances{
-    display: none;
-    height: 390px;
-}
-
-p{
-    color: ghostwhite;
+footer{
+    display: center;
+    background-color: #FF7100;
+    text-align: center;
 }
