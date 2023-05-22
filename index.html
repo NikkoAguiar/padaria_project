@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simulador de Padaria</title>
+        <link rel="stylesheet" href="./main.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <img src="images/pao_icone.png" alt="Pão francês"/>
+            <h1>Simulador de padaria</h1>
+        </header>
+        <section>
+            <div class="container">
+                <form id="form_padaria">
+                    <button type="button" id="assar_paes">Assar pães</button>
+                    <button type="button" id="vender_paes">Vender pães</button>
+                    <button type="button" id="verificar_estoque">Verificar estoque</button>
+                    <button type="button" id="verificar_forno">Verificar forno</button>
+                    <button type="button" id="verificar_caixa">Verificar caixa</button>
+                    <button type="button" id="fechar_por_hoje">Fechar por hoje</button>
+                </form>
+                <div class="images">
+                    <img src="./images/forno_cheio.png" alt="Forno cheio de pães franceses" id="forno_cheio"/>
+                    <img src="./images/forno_vazio.png" alt="Forno de assar pães vazio" id="forno_vazio"/>
+                    <img src="./images/estoque.png" alt="Estoque" id="estoque"/>
+                    <img src="./images/calendario.png" alt="Calendário" id="calendario"/>
+                    <img src="./images/caixa_registradora.png" alt="Caixa registradora" id="caixa"/>
+                    <img src="./images/pao_frances.png" alt="Pão francês" id="pao_fances"/>
+                    <img src="./images/paes_em_cestos.png" alt="Imagem selecionada para a venda de pães" id="selecao_de_paes"/>
+                </div>
+            </div>
+        </section>
+        <br/><br/><br/><br/>
+        <div class="container">
+            <p id="texto_assar">Agora você possuí um total de X pães no forno, contendo: X pães franceses, X massinhas doces e X baguetes.</p>
+            <p id="texto_vender">Qual tipo de pão você vai querer vender?</p>
+            <p id="texto_forno">O forno possui um total de X pães, contendo: X pães franceses, X massinhas doces e X baguetes.</p>
+            <p id="texto_estoque">O estoque possui um total de: X massas de pão francês, X massas de massinhas doces e X massas de baguetes.</p>
+            <p id="texto_caixa">R$0,00</p>
+            <p id="texto_calendario">Dia 1!</p>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script src="./main.js"></script>
+    </body>
+</html>
