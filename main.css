@@ -38,6 +38,33 @@ form{
     display: grid;
 }
 
+#paes{
+    display: none;
+}
+
+#numero_de_paes{
+    display: none;
+}
+
+#numero_de_paes label{
+    display: block;
+    margin-top: 100px;
+    color: #FFF;
+
+}
+
+#numero_de_paes input{
+    border: none;
+    border-bottom: #000 2px solid;
+    border-radius: 5px;
+}
+
+#numero_de_paes button{
+    display: block;
+    padding: 3px;
+    font-size: medium;
+}
+
 form button{
     background-color: #FF7100;
     color: #FFF;
@@ -120,4 +147,13 @@ button:hover{
 
 p{
     color: ghostwhite;
+}
+
+footer{
+    color: #FFF;
+    text-transform: uppercase;
+    background-color: #FF7100;
+    padding: 8px;
+    margin-top: 310px;
+    text-align: center;
 }

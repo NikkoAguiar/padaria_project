@@ -1,5 +1,22 @@
+let tipo1, tipo2, tipo3, estoqueTipo1, estoqueTipo2, estoqueTipo3, forno, caixa, dia;
+
+function dormir(){
+    dia = document.getElementById('texto_calendario');
+    parseInt(dia) += 1;
+    parseInt(estoqueTipo1) = 600;
+    parseInt(estoqueTipo2) = 200;
+    parseInt(estoqueTipo3) = 200;
+    console.log(estoqueTipo1, estoqueTipo2, estoqueTipo3, dia);
+    $('#texto_calendario').remove('p', this);
+    $(`<p>${dia}</p>`).appendTo('#texto_calendario');
+}
+
+
+
 $(document).ready(function(){
+    
     $('#assar_paes').click(function(e){
+        $('#paes').css('display', 'none');
         $('#calendario').slideUp();
         $('#forno_vazio').slideUp();
         $('#estoque').slideUp();
@@ -15,6 +32,13 @@ $(document).ready(function(){
 
     })
     $('#vender_paes').click(function(e){
+        $('#paes').css('display', 'block');
+        $('#paes').click(function(e){
+            $('#numero_de_paes').css('display', 'block');
+            $('#paes').css('display', 'none');
+        })
+
+
         $('#calendario').slideUp();
         $('#forno_vazio').slideUp();
         $('#estoque').slideUp();
@@ -29,6 +53,7 @@ $(document).ready(function(){
         $('#texto_calendario').css('display', 'none');
     })
     $('#verificar_estoque').click(function(e){
+        $('#paes').css('display', 'none');
         $('#calendario').slideUp();
         $('#forno_vazio').slideUp();
         $('#caixa').slideUp();
@@ -43,6 +68,7 @@ $(document).ready(function(){
         $('#texto_calendario').css('display', 'none');
     })
     $('#verificar_forno').click(function(e){
+        $('#paes').css('display', 'none');
         $('#calendario').slideUp();
         $('#caixa').slideUp();
         $('#forno_cheio').slideUp();
@@ -57,6 +83,7 @@ $(document).ready(function(){
         $('#texto_calendario').css('display', 'none');
     })
     $('#verificar_caixa').click(function(e){
+        $('#paes').css('display', 'none');
         $('#calendario').slideUp();
         $('#forno_cheio').slideUp();
         $('#selecao_de_paes').slideUp();
@@ -71,6 +98,8 @@ $(document).ready(function(){
         $('#texto_calendario').css('display', 'none');
     })
     $('#fechar_por_hoje').click(function(e){
+        dormir();
+        $('#paes').css('display', 'none');
         $('#forno_cheio').slideUp();
         $('#selecao_de_paes').slideUp();
         $('#estoque').slideUp();
