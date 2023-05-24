@@ -1,20 +1,27 @@
-let tipo1, tipo2, tipo3, estoqueTipo1, estoqueTipo2, estoqueTipo3, forno, caixa, dia;
-
-function dormir(){
-    dia = document.getElementById('texto_calendario');
-    parseInt(dia) += 1;
-    parseInt(estoqueTipo1) = 600;
-    parseInt(estoqueTipo2) = 200;
-    parseInt(estoqueTipo3) = 200;
-    console.log(estoqueTipo1, estoqueTipo2, estoqueTipo3, dia);
-    $('#texto_calendario').remove('p', this);
-    $(`<p>${dia}</p>`).appendTo('#texto_calendario');
-}
-
-
+let tipo1 = 0, tipo2 = 0, tipo3 = 0, estoqueTipo1 = 600, estoqueTipo2 = 200, estoqueTipo3 = 200, forno = 0, caixa = 0.0, dia = 1;
 
 $(document).ready(function(){
-    
+    function dormir(){
+        dia+= 1;
+        estoqueTipo1 = 600;
+        estoqueTipo2 = 200;
+        estoqueTipo3 = 200;
+        console.log(estoqueTipo1, estoqueTipo2, estoqueTipo3, dia);
+        $('#texto_calendario').empty('p');
+        $(`<p>Dia ${dia}!</p>`).appendTo('#texto_calendario');
+    }
+
+    function verificarEstoque(){
+        $('#texto_estoque').empty('p');
+        $(`<p>O estoque contém: ${estoqueTipo1} massas de pães franceses, ${estoqueTipo2} massas de massinhas doces e ${estoqueTipo3} massas de baguetes.</p>`).appendTo('#texto_estoque');
+    }
+
+    function Verificarforno(){
+        $('#texto_forno').empty('p');
+        $(`<p>O forno contém ${forno} pães, contendo: ${tipo1} pães franceses, ${tipo2} massinhas doces e ${tipo3} baguetes.</p>`).appendTo('#texto_forno');
+    }
+
+
     $('#assar_paes').click(function(e){
         $('#paes').css('display', 'none');
         $('#calendario').slideUp();
@@ -53,6 +60,7 @@ $(document).ready(function(){
         $('#texto_calendario').css('display', 'none');
     })
     $('#verificar_estoque').click(function(e){
+        verificarEstoque();
         $('#paes').css('display', 'none');
         $('#calendario').slideUp();
         $('#forno_vazio').slideUp();
@@ -68,6 +76,7 @@ $(document).ready(function(){
         $('#texto_calendario').css('display', 'none');
     })
     $('#verificar_forno').click(function(e){
+        Verificarforno();
         $('#paes').css('display', 'none');
         $('#calendario').slideUp();
         $('#caixa').slideUp();
