@@ -33,10 +33,12 @@
                 </form>
 
                 <form id="numero_de_paes">
-                    <input type="number" required min="1" max="60" id="receber_numero_de_paes_franceses"/>
-                    <input type="number" required min="1" max="20" id="receber_numero_de_massinhas_doces"/>
-                    <input type="number" required min="1" max="20" id="receber_numero_de_baguetes"/>
-                    <button type="submit" id="enviar_paes">Enviar</button>
+                    <input type="number" required min="1" max="60" id="receber_numero_de_paes_franceses" name="receber_numero_de_paes_franceses"/>
+                    <input type="number" required min="1" max="20" id="receber_numero_de_massinhas_doces" name="receber_numero_de_massinhas_doces"/>
+                    <input type="number" required min="1" max="20" id="receber_numero_de_baguetes" name="receber_numero_de_baguetes"/>
+                    <!-- <button type="button" id="enviar_paes_franceses">Enviar</button>
+                    <button type="button" id="enviar_massinhas_doces">Enviar</button> -->
+                    <button type="button" id="enviar_baguetes">Enviar</button>
                 </form>
 
                 <form id="continuar_vendendo">
@@ -58,11 +60,11 @@
         </section>
         <br/><br/><br/><br/>
         <div class="container">
-            <p id="texto_assar">Agora você possuí um total de X pães no forno, contendo: X pães franceses, X massinhas doces e X baguetes.</p>
+            <p id="texto_assar"><!--JavaScript fazendo--></p>
             <p id="texto_vender">Qual tipo de pão você vai querer vender?</p>
-            <p id="texto_forno">O forno possui um total de X pães, contendo: X pães franceses, X massinhas doces e X baguetes.</p>
-            <p id="texto_estoque">O estoque possui um total de: X massas de pão francês, X massas de massinhas doces e X massas de baguetes.</p>
-            <p id="texto_caixa">R$0,00</p>
+            <p id="texto_forno"><!--JavaScript fazendo--></p>
+            <p id="texto_estoque"><!--JavaScript fazendo--></p>
+            <p id="texto_caixa"><!--JavaScript fazendo--></p>
             <p id="texto_calendario">Dia 1!</p>
         </div>
         <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>

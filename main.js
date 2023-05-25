@@ -51,6 +51,41 @@ $(document).ready(function(){
         $('#baguete_escolher').click(function(e){
             $('#paes').css('display', 'none');
             $('#numero_de_paes').css('display', 'block');
+            $('#enviar_baguetes').css('display', 'block');
+            $('#receber_numero_de_baguetes').css('display', 'block');
+            if(parseInt(tipo3) <= 0){
+                $('#texto_vender').empty('p');
+                $('<p>Você não possui baguetes assadas!</p>').appendTo('#texto_vender');
+            }else{
+                $('#enviar_baguetes').click(function(e){
+                    tipo3 -= $('#receber_numero_de_baguetes').val();
+                    forno = tipo1 + tipo2 + tipo3;
+                    caixa += 7.77 * $('#receber_numero_de_baguetes').val();
+                    let vendaArredondada = 7.77 * $('#receber_numero_de_baguetes').val();
+                    $('#texto_vender').empty('p');
+                    $(`<p>R$${vendaArredondada.toFixed(2)} foram adicionados ao caixa, você ficou com ${tipo3} baguetes sobrando.</p>`).appendTo('#texto_vender');
+                    $('#enviar_baguetes').css('display', 'none');
+                    $('#receber_numero_de_baguetes').css('display', 'none');
+                    $('#numero_de_paes').css('display', 'none');
+                    $('#continuar_vendendo').css('display', 'block');
+                    $('#continuar').click(function(e){
+                        tipo3 -= $('#receber_numero_de_baguetes').val();
+                        forno = tipo1 + tipo2 + tipo3;
+                        caixa += 7.77 * $('#receber_numero_de_baguetes').val();
+                        let vendaArredondada = 7.77 * $('#receber_numero_de_baguetes').val();
+                        $('#texto_vender').empty('p');
+                        $(`<p>R$${vendaArredondada.toFixed(2)} foram adicionados ao caixa, você ficou com ${tipo3} baguetes sobrando.</p>`).appendTo('#texto_vender');
+                        $('#enviar_baguetes').css('display', 'none');
+                        $('#receber_numero_de_baguetes').css('display', 'none');
+                        $('#numero_de_paes').css('display', 'none');
+                        $('#continuar_vendendo').css('display', 'block');
+                    })
+                    $('#nao_continuar').click(function(e){
+                        $('#continuar_vendendo').css('display', 'none');
+                        
+                    })
+                })
+            }
         })
     }
 

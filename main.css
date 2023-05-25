@@ -54,11 +54,25 @@ header h1{
     width: 100px;
 }
 
-#numero_de_paes, #enviar_paes{
+#numero_de_paes{
     display: none;
     width: 100px;
 }
 
+#enviar_paes_franceses{
+    display: none;
+    width: 100px;
+}
+
+#enviar_baguetes{
+    display: none;
+    width: 100px;
+}
+
+#enviar_massinhas_doces{
+    display: none;
+    width: 100px;
+}
 
 #numero_de_paes button{
     display: block;
