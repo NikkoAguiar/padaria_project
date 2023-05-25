@@ -6,6 +6,10 @@ $(document).ready(function(){
         estoqueTipo1 = 600;
         estoqueTipo2 = 200;
         estoqueTipo3 = 200;
+        forno = 0;
+        tipo1 = 0;
+        tipo2 = 0;
+        tipo3 = 0;
         console.log(estoqueTipo1, estoqueTipo2, estoqueTipo3, dia);
         $('#texto_calendario').empty('p');
         $(`<p>Dia ${dia}!</p>`).appendTo('#texto_calendario');
@@ -16,13 +20,43 @@ $(document).ready(function(){
         $(`<p>O estoque contém: ${estoqueTipo1} massas de pães franceses, ${estoqueTipo2} massas de massinhas doces e ${estoqueTipo3} massas de baguetes.</p>`).appendTo('#texto_estoque');
     }
 
-    function Verificarforno(){
+    function VerificarForno(){
         $('#texto_forno').empty('p');
         $(`<p>O forno contém ${forno} pães, contendo: ${tipo1} pães franceses, ${tipo2} massinhas doces e ${tipo3} baguetes.</p>`).appendTo('#texto_forno');
     }
 
+    function verificarCaixa(){
+        $('#texto_caixa').empty('p');
+        $(`<p>R$${caixa.toFixed(2)}</p>`).appendTo('#texto_caixa');
+    }
+
+    function assar(){
+        if(forno == 100){
+            $('#texto_assar').empty('p');
+            $(`<p>O forno está cheio!</p>`).appendTo('#texto_assar');
+        }else{
+            tipo1 = 60;
+            tipo2 = 20;
+            tipo3 = 20;
+            forno = 100;
+            estoqueTipo1 -= tipo1;
+            estoqueTipo2 -= tipo2;
+            estoqueTipo3 -= tipo3;
+            $('#texto_assar').empty('p');
+            $(`<p>O forno está com ${forno} pães, contendo: ${tipo1} pães franceses, ${tipo2} massinhas doces e ${tipo3} baguetes.</p>`).appendTo('#texto_assar');
+        }
+    }
+
+    function vender(){
+        $('#baguete_escolher').click(function(e){
+            $('#paes').css('display', 'none');
+            $('#receber_numero_de_baguetes').show();
+        })
+    }
+
 
     $('#assar_paes').click(function(e){
+        assar();
         $('#paes').css('display', 'none');
         $('#calendario').slideUp();
         $('#forno_vazio').slideUp();
@@ -39,13 +73,8 @@ $(document).ready(function(){
 
     })
     $('#vender_paes').click(function(e){
+        vender();
         $('#paes').css('display', 'block');
-        $('#paes').click(function(e){
-            $('#numero_de_paes').css('display', 'block');
-            $('#paes').css('display', 'none');
-        })
-
-
         $('#calendario').slideUp();
         $('#forno_vazio').slideUp();
         $('#estoque').slideUp();
@@ -76,7 +105,7 @@ $(document).ready(function(){
         $('#texto_calendario').css('display', 'none');
     })
     $('#verificar_forno').click(function(e){
-        Verificarforno();
+        VerificarForno();
         $('#paes').css('display', 'none');
         $('#calendario').slideUp();
         $('#caixa').slideUp();
@@ -92,6 +121,7 @@ $(document).ready(function(){
         $('#texto_calendario').css('display', 'none');
     })
     $('#verificar_caixa').click(function(e){
+        verificarCaixa();
         $('#paes').css('display', 'none');
         $('#calendario').slideUp();
         $('#forno_cheio').slideUp();

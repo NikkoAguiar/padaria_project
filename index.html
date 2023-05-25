@@ -25,16 +25,26 @@
                     <button type="button" id="verificar_caixa">Verificar caixa</button>
                     <button type="button" id="fechar_por_hoje">Fechar por hoje</button>
                 </form>
+
                 <form id="paes">
                         <button type="button" id="baguete_escolher">Baguete</button><br/>
                         <button type="button" id="pao_frances_escolher">Pão francês</button><br/>
-                        <button type="button" id="massinha_doce_escolher">Massinha doce</button>
+                        <button type="button" id="massinha_doce_escolher">Massinha doces</button>
                 </form>
+
                 <form id="numero_de_paes">
-                    <label>Quantos?</label>
-                    <input type="number" required min="1" max="20"/>
-                    <button type="button">Enviar</button>
+                    <input type="number" required min="1" max="60" id="receber_numero_de_paes_franceses"/>
+                    <input type="number" required min="1" max="20" id="receber_numero_de_massinhas_doces"/>
+                    <input type="number" required min="1" max="20" id="receber_numero_de_baguetes"/>
+                    <button type="submit" id="enviar_paes">Enviar</button>
                 </form>
+
+                <form id="continuar_vendendo">
+                    <label>Continuar vendendo?</label>
+                    <button type="button" id="continuar">Sim</button>
+                    <button type="button" id="nao_continuar">Não</button>
+                </form>
+
                 <div class="images">
                     <img src="./images/forno_cheio.png" alt="Forno cheio de pães franceses" id="forno_cheio"/>
                     <img src="./images/forno_vazio.png" alt="Forno de assar pães vazio" id="forno_vazio"/>

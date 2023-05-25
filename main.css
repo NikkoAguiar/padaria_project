@@ -57,12 +57,25 @@ form{
     border: none;
     border-bottom: #000 2px solid;
     border-radius: 5px;
+    width: 100px;
 }
 
 #numero_de_paes button{
     display: block;
     padding: 3px;
-    font-size: medium;
+    font-size: large;
+}
+
+#continuar_vendendo{
+    display: none;
+    padding: 3px;
+    font-size: large;
+}
+
+form label{
+    display: grid;
+    color: #FFF;
+    font-weight: bold;
 }
 
 form button{
