@@ -34,7 +34,7 @@ header h1{
     justify-content: space-evenly;
 }
 
-form{
+#form_padaria{
     display: grid;
 }
 
@@ -42,23 +42,23 @@ form{
     display: none;
 }
 
-#numero_de_paes{
+/* #numero_de_paes{
     display: none;
-}
+} */
 
-#numero_de_paes label{
-    display: block;
-    margin-top: 100px;
-    color: #FFF;
-
-}
-
-#numero_de_paes input{
+#receber_numero_de_paes_franceses, #receber_numero_de_massinhas_doces, #receber_numero_de_baguetes{
+    display: none;
     border: none;
     border-bottom: #000 2px solid;
     border-radius: 5px;
     width: 100px;
 }
+
+#numero_de_paes, #enviar_paes{
+    display: none;
+    width: 100px;
+}
+
 
 #numero_de_paes button{
     display: block;

@@ -50,7 +50,7 @@ $(document).ready(function(){
     function vender(){
         $('#baguete_escolher').click(function(e){
             $('#paes').css('display', 'none');
-            $('#receber_numero_de_baguetes').show();
+            $('#numero_de_paes').css('display', 'block');
         })
     }
 
