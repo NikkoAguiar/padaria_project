@@ -1,4 +1,5 @@
 let tipo1 = 0, tipo2 = 0, tipo3 = 0, estoqueTipo1 = 600, estoqueTipo2 = 200, estoqueTipo3 = 200, forno = 0, caixa = 0.0, dia = 1;
+let vendaArredondada;
 
 $(document).ready(function(){
     function dormir(){
@@ -48,7 +49,7 @@ $(document).ready(function(){
     }
 
     function vender(){
-        $('#baguete_escolher').click(function(e){
+        $('button[name=baguete_escolher]').click(function(e){
             $('#paes').css('display', 'none');
             $('#numero_de_paes').css('display', 'block');
             $('#enviar_baguetes').css('display', 'block');
@@ -60,20 +61,20 @@ $(document).ready(function(){
                 $('#texto_vender').empty('p');
                 $('<p>Você não possui baguetes assadas!</p>').appendTo('#texto_vender');
             }else{
-                $('#enviar_baguetes').click(function(e){
+                $('button[name=enviar_baguetes]').click(function(e){
                     tipo3 -= $('#receber_numero_de_baguetes').val();
                     forno = tipo1 + tipo2 + tipo3;
                     caixa += 7.77 * $('#receber_numero_de_baguetes').val();
-                    let vendaArredondada = 7.77 * $('#receber_numero_de_baguetes').val();
+                    vendaArredondada = 7.77 * $('#receber_numero_de_baguetes').val();
                     $('#texto_vender').empty('p');
-                    $(`<p>R$${vendaArredondada.toFixed(2)} foram adicionados ao caixa, você ficou com ${tipo3} baguetes sobrando.</p>`).appendTo('#texto_vender');
+                    $(`<p>Você possui um total de R$${caixa.toFixed(2)} no caixa, você ficou com ${tipo3} baguetes sobrando.</p>`).appendTo('#texto_vender');
                     $('#enviar_baguetes').css('display', 'none');
                     $('#receber_numero_de_baguetes').css('display', 'none');
                     $('#numero_de_paes').css('display', 'none');
                     $('#continuar_vendendo').css('display', 'block');
                     $('#receber_numero_de_baguetes').val(0.0);
                     console.log(vendaArredondada);
-                    $('#continuar').click(function(e){
+                    $('button[name=continuar]').click(function(e){
                         $('#continuar_vendendo').css('display', 'none');
                         $('#paes').css('display', 'block');
                         
@@ -113,14 +114,14 @@ $(document).ready(function(){
                     //     }
                     //     $('#receber_numero_de_baguetes').val(0.0);
                     })
-                    $('#nao_continuar').click(function(e){
+                    $('button[name=nao_continuar]').click(function(e){
                         $('#continuar_vendendo').css('display', 'none');
                         $('#texto_vender').empty('p');
                         $(`<p>O que quer fazer?</p>`).appendTo('#texto_vender');
                     })
                 })
             }
-            $('#botao_sair').click(function(e){
+            $('button[name=botao_sair]').click(function(e){
                 $('#texto_vender').empty('p');
                 $(`<p>O que quer fazer?</p>`).appendTo('#texto_vender');
                 $('#numero_de_paes').css('display', 'none');
