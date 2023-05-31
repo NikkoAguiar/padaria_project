@@ -1,5 +1,32 @@
 let tipo1 = 0, tipo2 = 0, tipo3 = 0, estoqueTipo1 = 600, estoqueTipo2 = 200, estoqueTipo3 = 200, forno = 0, caixa = 0.0, dia = 1;
-let vendaArredondada;
+let vendaArredondada = 0;
+
+/*function vender(){
+    document.querySelector('button[name=baguete_escolher]').addEventListener('click', function(){
+        document.getElementById('paes').style.display = 'none';
+        document.getElementById('numero_de_paes').style.display = 'block';
+        document.getElementById('enviar_baguetes').style.display = 'block';
+        document.getElementById('receber_numero_de_baguetes').style.display = 'block';
+        if(parseInt(tipo3) <= 0){
+            document.getElementById('numero_de_paes').style.display = 'none';
+            document.getElementById('enviar_baguetes').style.display = 'none';
+            document.getElementById('receber_numero_de_baguetes').style.display = 'none';
+            document.getElementById('texto_vender').innerHTML = 'Você não possui baguetes assadas!';
+        }else{
+            document.getElementById('enviar_baguetes').addEventListener('click', function(){
+                tipo3 -= document.getElementById('receber_numero_de_baguetes').value;
+                forno = tipo1 + tipo2 + tipo3;
+                caixa += 7.77 * document.getElementById('receber_numero_de_baguetes').value;
+                vendaArredondada = 7.77 * document.getElementById('receber_numero_de_baguetes').value;
+                document.getElementById('texto_vender').innerHTML = `R$${vendaArredondada.toFixed(2)} Foram adicionados no caixa, você ficou com ${tipo3} baguetes sobrando.`
+                document.getElementById('enviar_baguetes').style.display = 'none';
+                document.getElementById('numero_de_paes').style.display = 'none';
+                document.querySelector('#receber_numero_de_baguetes').value = 0;
+                console.log(vendaArredondada);
+            })
+        }
+    })
+}*/
 
 $(document).ready(function(){
     function dormir(){
@@ -71,20 +98,8 @@ $(document).ready(function(){
                     $('#enviar_baguetes').css('display', 'none');
                     $('#receber_numero_de_baguetes').css('display', 'none');
                     $('#numero_de_paes').css('display', 'none');
-                    // // $('#continuar_vendendo').css('display', 'block');
                     document.getElementById('#receber_numero_de_baguetes').value = '0';
                     console.log(vendaArredondada);
-                    // $('button[name=continuar]').click(function(e){
-                    //     $('#continuar_vendendo').css('display', 'none');
-                    //     $('#paes').css('display', 'block');
-                    //     vender();
-                    // })
-                    // $('button[name=nao_continuar]').click(function(e){
-                    //     $('#continuar_vendendo').css('display', 'none');
-                    //     $('#texto_vender').empty();
-                    //     $(`<p>O que quer fazer?</p>`).appendTo('#texto_vender');
-                    // })
-                    
                 })
             }
             $('button[name=botao_sair]').click(function(e){
