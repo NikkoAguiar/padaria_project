@@ -76,6 +76,39 @@ $(document).ready(function(){
     }
 
     function vender(){
+        $('button[name=pao_frances_escolher]').click(function(e){
+            $('#paes').css('display', 'none');
+            $('#numero_de_paes').css('display', 'block');
+            $('#enviar_baguetes').css('display', 'none');
+            $('#enviar_paes_franceses').css('display', 'block');
+            $('#receber_numero_de_paes_franceses').css('display', 'block');
+            if(parseInt(tipo3) <= 0){
+                $('#numero_de_paes').css('display', 'none');
+                $('#enviar_paes_franceses').css('display', 'none');
+                $('#receber_numero_de_paes_franceses').css('display', 'none');
+                $('#texto_vender').empty();
+                $('<p>Você não possui pães franceses assados!</p>').appendTo('#texto_vender');
+            }else{
+                $('button[name=enviar]').click(function(e){
+                    tipo1 -= $('#receber_numero_de_paes_franceses').val();
+                    forno = tipo1 + tipo2 + tipo3;
+                    caixa += 7.77 * $('#receber_numero_de_paes_franceses').val();
+                    // vendaArredondada = 7.77 * $('#receber_numero_de_baguetes').val();
+                    $('#texto_vender').empty();
+                    $(`<p>O caixa tem um total de R$${caixa.toFixed(2)}, você ficou com ${tipo1} pães franceses sobrando.</p>`).appendTo('#texto_vender');
+                    $('#enviar_paes_franceses').css('display', 'none');
+                    $('#receber_numero_de_paes_franceses').css('display', 'none');
+                    $('#numero_de_paes').css('display', 'none');
+                    $('#receber_numero_de_paes_franceses').val(0);
+                    console.log(vendaArredondada);
+                })
+            }
+            $('button[name=botao_sair]').click(function(e){
+                $('#texto_vender').empty();
+                $(`<p>O que quer fazer?</p>`).appendTo('#texto_vender');
+                $('#numero_de_paes').css('display', 'none');
+            })
+        })
         $('button[name=baguete_escolher]').click(function(e){
             $('#paes').css('display', 'none');
             $('#numero_de_paes').css('display', 'block');
@@ -91,14 +124,14 @@ $(document).ready(function(){
                 $('button[name=enviar_baguetes]').click(function(e){
                     tipo3 -= $('#receber_numero_de_baguetes').val();
                     forno = tipo1 + tipo2 + tipo3;
-                    caixa += 7.77 * $('#receber_numero_de_baguetes').val();
-                    vendaArredondada = 7.77 * $('#receber_numero_de_baguetes').val();
+                    vendaArredondada = caixa += 7.77 * $('#receber_numero_de_baguetes').val();
+                    // vendaArredondada = 7.77 * $('#receber_numero_de_baguetes').val();
                     $('#texto_vender').empty();
-                    $(`<p>R$${vendaArredondada.toFixed(2)} foram adicionados no caixa, você ficou com ${tipo3} baguetes sobrando.</p>`).appendTo('#texto_vender');
+                    $(`<p>O caixa tem um total de R$${vendaArredondada.toFixed(2)}, você ficou com ${tipo3} baguetes sobrando.</p>`).appendTo('#texto_vender');
                     $('#enviar_baguetes').css('display', 'none');
                     $('#receber_numero_de_baguetes').css('display', 'none');
                     $('#numero_de_paes').css('display', 'none');
-                    document.getElementById('#receber_numero_de_baguetes').value = '0';
+                    $('#receber_numero_de_baguetes').val(0);
                     console.log(vendaArredondada);
                 })
             }
