@@ -94,7 +94,7 @@ $(document).ready(function(){
                     caixa += 7.77 * $('#receber_numero_de_baguetes').val();
                     vendaArredondada = 7.77 * $('#receber_numero_de_baguetes').val();
                     $('#texto_vender').empty();
-                    $(`<p>Você possui um total de R$${vendaArredondada.toFixed(2)} no caixa, você ficou com ${tipo3} baguetes sobrando.</p>`).appendTo('#texto_vender');
+                    $(`<p>R$${vendaArredondada.toFixed(2)} foram adicionados no caixa, você ficou com ${tipo3} baguetes sobrando.</p>`).appendTo('#texto_vender');
                     $('#enviar_baguetes').css('display', 'none');
                     $('#receber_numero_de_baguetes').css('display', 'none');
                     $('#numero_de_paes').css('display', 'none');
