@@ -80,17 +80,17 @@ header h1{
     font-size: large;
 }
 
-#continuar_vendendo{
+/* #continuar_vendendo{
     display: none;
     padding: 3px;
     font-size: large;
-}
+} */
 
-form label{
+/* form label{
     display: grid;
     color: #FFF;
     font-weight: bold;
-}
+} */
 
 form button{
     background-color: #FF7100;
@@ -175,12 +175,3 @@ button:hover{
 p{
     color: ghostwhite;
 }
-
-/* footer{
-    color: #FFF;
-    text-transform: uppercase;
-    background-color: #FF7100;
-    padding: 8px;
-    margin-top: 310px;
-    text-align: center;
-} */

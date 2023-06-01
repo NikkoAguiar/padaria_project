@@ -26,27 +26,27 @@
                     <button type="button" id="fechar_por_hoje">Fechar por hoje</button>
                 </form>
 
-                <form id="paes">
+                <form id="paes" name="paes">
                         <button type="button" id="baguete_escolher" name="baguete_escolher">Baguete</button><br/>
                         <button type="button" id="pao_frances_escolher" name="pao_frances_escolher">Pão francês</button><br/>
                         <button type="button" id="massinha_doce_escolher" name="massinha_doce_escolher">Massinha doces</button>
                 </form>
 
-                <form id="numero_de_paes">
+                <form id="numero_de_paes" name="numero_de_paes">
                     <input type="number" value="0" required min="1" max="60" id="receber_numero_de_paes_franceses" name="receber_numero_de_paes_franceses"/>
                     <input type="number" value="0" required min="1" max="20" id="receber_numero_de_massinhas_doces" name="receber_numero_de_massinhas_doces"/>
                     <input type="number" value="0" required min="1" max="20" id="receber_numero_de_baguetes" name="receber_numero_de_baguetes"/>
-                    <!-- <button type="button" id="enviar_paes_franceses" name="enviar_paes_franceses">Enviar</button>
-                    <button type="button" id="enviar_massinhas_doces" name="enviar_massinhas_doces">Enviar</button> -->
-                    <button type="button" id="enviar" name="enviar">Enviar</button>
+                    <button type="button" id="enviar_paes_franceses" name="enviar_paes_franceses">Enviar</button>
+                    <button type="button" id="enviar_massinhas_doces" name="enviar_massinhas_doces">Enviar</button>
+                    <button type="button" id="enviar_baguetes" name="enviar_baguetes">Enviar</button>
                     <button type="button" id="botao_sair" name="botao_sair">Sair</button>
                 </form>
 
-                <form id="continuar_vendendo">
+                <!-- <form id="continuar_vendendo">
                     <label>Continuar vendendo?</label>
                     <button type="button" id="continuar" name="continuar">Sim</button>
                     <button type="button" id="nao_continuar" name="nao_continuar">Não</button>
-                </form>
+                </form> -->
 
                 <div class="images">
                     <img src="./images/forno_cheio.png" alt="Forno cheio de pães franceses" id="forno_cheio"/>
@@ -61,12 +61,12 @@
         </section>
         <br/><br/><br/><br/>
         <div class="container">
-            <p id="texto_assar"><!--JavaScript fazendo--></p>
-            <p id="texto_vender">Qual tipo de pão você vai querer vender?</p>
-            <p id="texto_forno"><!--JavaScript fazendo--></p>
-            <p id="texto_estoque"><!--JavaScript fazendo--></p>
-            <p id="texto_caixa"><!--JavaScript fazendo--></p>
-            <p id="texto_calendario">Dia 1!</p>
+            <p id="texto_assar" name="texto_assar"><!--JavaScript fazendo--></p>
+            <p id="texto_vender" name="texto_vender">Qual tipo de pão você vai querer vender?</p>
+            <p id="texto_forno" name="texto_forno"><!--JavaScript fazendo--></p>
+            <p id="texto_estoque" name="texto_estoque"><!--JavaScript fazendo--></p>
+            <p id="texto_caixa" name="texto_caixa"><!--JavaScript fazendo--></p>
+            <p id="texto_calendario" name="texto_calendario">Dia 1!</p>
         </div>
         <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
         <script src="./main.js"></script>
