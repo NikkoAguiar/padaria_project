@@ -35,7 +35,49 @@ $(document).ready(function(){
         if(forno == 100){
             $('#texto_assar').empty();
             $(`<p>O forno está cheio!</p>`).appendTo('#texto_assar');
-        }else{
+        }else if(tipo1 == 0 && tipo2 > 0 && tipo3 > 0){
+            tipo1 = 60;
+            estoqueTipo1 -= tipo1;
+            forno = 100;
+            $('#texto_assar').empty();
+            $(`<p>O espaço de pães franceses foi reabastecido!</p>`).appendTo('#texto_assar');
+        }else if(tipo2 == 0 && tipo1 > 0 && tipo3 > 0){
+            tipo2 = 20;
+            estoqueTipo2 -= tipo2;
+            forno = 100;
+            $('#texto_assar').empty();
+            $(`<p>O espaço de massinhas doces foi reabastecido!</p>`).appendTo('#texto_assar');
+        }else if(tipo3 == 0 && tipo2 > 0 && tipo1 > 0){
+            tipo3 = 20;
+            estoqueTipo3 -= tipo3;
+            forno = 100;
+            $('#texto_assar').empty();
+            $(`<p>O espaço de baguetes foi reabastecido!</p>`).appendTo('#texto_assar');
+        }else if(tipo1 == 0 && tipo2 == 0 && tipo3 > 0){
+            tipo1 = 60;
+            estoqueTipo1 -= tipo1;
+            tipo2 = 20;
+            estoqueTipo2 -= tipo2;
+            forno = 100;
+            $('#texto_assar').empty();
+            $(`<p>Os espaços de pães franceses e massinhas doces foram reabastecidos!</p>`).appendTo('#texto_assar');
+        }else if(tipo2 == 0 && tipo3 == 0 && tipo1  > 0){
+            tipo2 = 20;
+            estoqueTipo2 -= tipo2;
+            tipo3 = 20;
+            estoqueTipo3 -= tipo3;
+            forno = 100;
+            $('#texto_assar').empty();
+            $(`<p>Os espaços de massinhas doces e baguetes foram reabastecidos!</p>`).appendTo('#texto_assar');
+        }else if(tipo1 == 0 && tipo3 == 0 && tipo2 > 0){
+            tipo1 = 60;
+            estoqueTipo1 -= tipo1;
+            tipo3 = 20;
+            estoqueTipo3 -= tipo3;
+            forno = 100;
+            $('#texto_assar').empty();
+            $(`<p>Os espaços de pães franceses e baguetes foram reabastecidos!</p>`).appendTo('#texto_assar');
+        }else if(tipo1 == 0 && tipo2 == 0 && tipo3 == 0){
             tipo1 = 60;
             tipo2 = 20;
             tipo3 = 20;
@@ -45,10 +87,14 @@ $(document).ready(function(){
             estoqueTipo3 -= tipo3;
             $('#texto_assar').empty();
             $(`<p>O forno está com ${forno} pães, contendo: ${tipo1} pães franceses, ${tipo2} massinhas doces e ${tipo3} baguetes.</p>`).appendTo('#texto_assar');
+        }else{
+            $('#texto_assar').empty();
+            $(`<p>Nenhum espaço está zerado ainda!</p>`).appendTo('#texto_assar');
         }
     }
 
     function vender(){
+        // Botão de escolha de pães franceses.
         $('button[name=pao_frances_escolher]').click(function(e){
             $('form[name=paes]').css('display', 'none');
             $('form[name=numero_de_paes]').css('display', 'block');
@@ -66,8 +112,8 @@ $(document).ready(function(){
                 $('<p>Você não possui pães franceses assados!</p>').appendTo('p[name=texto_vender]');
             }else{
                 $('button[name=enviar_paes_franceses]').click(function(e){
-                    cont1 = $('input[name=receber_numero_de_paes_franceses]').val();
-                    if(parseInt(cont1) > tipo1){
+                    cont = $('input[name=receber_numero_de_paes_franceses]').val();
+                    if(parseInt(cont) > tipo1){
                         $('button[name=enviar_paes_franceses]').css('display', 'none');
                         $('input[name=receber_numero_de_paes_franceses]').css('display', 'none');
                         $('form[name=numero_de_paes]').css('display', 'none');
@@ -92,7 +138,7 @@ $(document).ready(function(){
                 $('form[name=numero_de_paes]').css('display', 'none');
             })
         })
-
+        //Botão de escolha de massinhas doces
         $('button[name=massinha_doce_escolher]').click(function(e){
             $('form[name=paes]').css('display', 'none');
             $('form[name=numero_de_paes]').css('display', 'block');
@@ -110,23 +156,23 @@ $(document).ready(function(){
                 $('<p>Você não possui massinhas doces assadas!</p>').appendTo('p[name=texto_vender]');
             }else{
                 $('button[name=enviar_massinhas_doces]').click(function(e){
-                    cont = $('input[name=receber_numero_de_paes_franceses]').val();
-                    if(parseInt(cont) > tipo1){
-                        $('button[name=enviar_paes_franceses]').css('display', 'none');
-                        $('input[name=receber_numero_de_paes_franceses]').css('display', 'none');
+                    cont = $('input[name=receber_numero_de_massinhas_doces]').val();
+                    if(parseInt(cont) > tipo2){
+                        $('button[name=enviar_massinhas_doces]').css('display', 'none');
+                        $('input[name=receber_numero_de_massinhas_doces]').css('display', 'none');
                         $('form[name=numero_de_paes]').css('display', 'none');
                         $('p[name=texto_vender').empty();
-                        $(`<p>O forno só possui ${tipo1} pães franceses!</p>`).appendTo('p[name=texto_vender]');
+                        $(`<p>O forno só possui ${tipo1} massinhas doces!</p>`).appendTo('p[name=texto_vender]');
                     }else{
-                        tipo1 -= $('input[name=receber_numero_de_paes_franceses]').val();
+                        tipo2 -= $('input[name=receber_numero_de_massinhas_doces]').val();
                         forno = tipo1 + tipo2 + tipo3;
-                        caixa += 0.91 * $('input[name=receber_numero_de_paes_franceses]').val();
+                        caixa += 1.50 * $('input[name=receber_numero_de_massinhas_doces]').val();
                         $('p[name=texto_vender]').empty();
-                        $(`<p>O caixa tem um total de R$${caixa.toFixed(2)}, você ficou com ${tipo1} pães franceses sobrando.</p>`).appendTo('p[name=texto_vender]');
-                        $('button[name=enviar_paes_franceses]').css('display', 'none');
-                        $('input[name=receber_numero_de_paes_franceses]').css('display', 'none');
+                        $(`<p>O caixa tem um total de R$${caixa.toFixed(2)}, você ficou com ${tipo2} massinhas doces sobrando.</p>`).appendTo('p[name=texto_vender]');
+                        $('button[name=enviar_massinhas_doces]').css('display', 'none');
+                        $('input[name=receber_numero_de_massinhas_doces]').css('display', 'none');
                         $('form[name=numero_de_paes]').css('display', 'none');
-                        $('input[name=receber_numero_de_paes_franceses]').val(0);
+                        $('input[name=receber_numero_de_massinhas_doces]').val(0);
                     }
                 })
             }
