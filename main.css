@@ -7,7 +7,6 @@
 
 body{
     background-color: #E9873E;
-    /* padding-top: 100px; */
 }
 
 header{
@@ -42,10 +41,6 @@ header h1{
     display: none;
 }
 
-/* #numero_de_paes{
-    display: none;
-} */
-
 #receber_numero_de_paes_franceses, #receber_numero_de_massinhas_doces, #receber_numero_de_baguetes{
     display: none;
     border: none;
@@ -69,6 +64,11 @@ header h1{
     width: 100px;
 }
 
+#enviar_massinhas_doces{
+    display: none;
+    width: 100px;
+}
+
 #botao_sair{
     display: none;
     width: 100px;
@@ -79,18 +79,6 @@ header h1{
     padding: 3px;
     font-size: large;
 }
-
-/* #continuar_vendendo{
-    display: none;
-    padding: 3px;
-    font-size: large;
-} */
-
-/* form label{
-    display: grid;
-    color: #FFF;
-    font-weight: bold;
-} */
 
 form button{
     background-color: #FF7100;
@@ -138,11 +126,6 @@ button:hover{
     height: 390px;
 }
 
-#pao_fances{
-    display: none;
-    height: 390px;
-}
-
 #selecao_de_paes{
     display: none;
     height: 390px;
@@ -173,5 +156,87 @@ button:hover{
 }
 
 p{
+    font-size: larger;
+    margin: 15px;
+    text-align: justify;
     color: ghostwhite;
+}
+
+@media screen and (min-width: 641px) and (max-width: 1023px) {
+    #forno_cheio{
+        display: none;
+        height: 300px;
+        border-radius: 7px;
+    }
+    
+    #forno_vazio{
+        height: 300px;
+        display: none;
+    }
+    
+    #estoque{
+        display: none;
+        height: 300px;
+    }
+    
+    #calendario{
+        display: flex;
+        height: 300px;
+    }
+    
+    #caixa{
+        display: none;
+        height: 300px;
+    }
+    
+    #selecao_de_paes{
+        display: none;
+        height: 300px;
+    }
+
+    p{
+        font-size: larger;
+        margin: 15px;
+        text-align: justify;
+    }
+}
+
+@media screen and (max-width: 640px) {
+
+    #forno_cheio{
+        display: none;
+        height: 100px;
+        border-radius: 7px;
+    }
+    
+    #forno_vazio{
+        height: 100px;
+        display: none;
+    }
+    
+    #estoque{
+        display: none;
+        height: 100px;
+    }
+    
+    #calendario{
+        display: flex;
+        height: 100px;
+    }
+    
+    #caixa{
+        display: none;
+        height: 100px;
+    }
+    
+    #selecao_de_paes{
+        display: none;
+        height: 100px;
+    }
+
+    p{
+        font-size: large;
+        margin: 15px;
+        text-align: justify;
+    }
 }

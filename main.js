@@ -1,5 +1,5 @@
-let tipo1 = 0, tipo2 = 0, tipo3 = 0, estoqueTipo1 = 600, estoqueTipo2 = 200, estoqueTipo3 = 200, forno = 0, caixa = 0.0, dia = 1;
-let cont;
+let tipo1 = 0, tipo2 = 0, tipo3 = 0, estoqueTipo1 = 600, estoqueTipo2 = 200, estoqueTipo3 = 200, forno = 0, caixa = 0.0, dia = 1, cont;
+
 
 $(document).ready(function(){
     function dormir(){
@@ -94,7 +94,7 @@ $(document).ready(function(){
     }
 
     function vender(){
-        // Botão de escolha de pães franceses.
+//=========================================================Botão de escolha de pães franceses.================================================================================
         $('button[name=pao_frances_escolher]').click(function(e){
             $('form[name=paes]').css('display', 'none');
             $('form[name=numero_de_paes]').css('display', 'block');
@@ -138,12 +138,12 @@ $(document).ready(function(){
                 $('form[name=numero_de_paes]').css('display', 'none');
             })
         })
-        //Botão de escolha de massinhas doces
+//=========================================================Botão de escolha de massinhas doces.================================================================================
         $('button[name=massinha_doce_escolher]').click(function(e){
             $('form[name=paes]').css('display', 'none');
             $('form[name=numero_de_paes]').css('display', 'block');
             $('button[name=enviar_baguetes]').css('display', 'none');
-            $('button[name=enviar_massinhas_doces]').css('display', 'blcok');
+            $('button[name=enviar_massinhas_doces]').css('display', 'block');
             $('button[name=enviar_paes_franceses]').css('display', 'none');
             $('input[name=receber_numero_de_paes_franceses]').css('display', 'none');
             $('input[name=receber_numero_de_baguetes]').css('display', 'none');
@@ -182,7 +182,7 @@ $(document).ready(function(){
                 $('form[name=numero_de_paes]').css('display', 'none');
             })
         })
-
+//=========================================================Botão de escolha de baguetes.=======================================================================================
         $('button[name=baguete_escolher]').click(function(e){
             $('form[name=paes]').css('display', 'none');
             $('form[name=numero_de_paes]').css('display', 'block');
@@ -234,12 +234,12 @@ $(document).ready(function(){
 
     $('#assar_paes').click(function(e){
         assar();
+        $('form[name=numero_de_paes]').css('display', 'none');
         $('#paes').css('display', 'none');
         $('#calendario').slideUp();
         $('#forno_vazio').slideUp();
         $('#estoque').slideUp();
         $('#caixa').slideUp();
-        $('#selecao_de_paes').slideUp();
         $('#forno_cheio').slideDown();
         $('#texto_assar').css('display', 'block');
         $('#texto_vender').css('display', 'none');
@@ -250,6 +250,9 @@ $(document).ready(function(){
 
     })
     $('#vender_paes').click(function(e){
+        $('form[name=numero_de_paes]').css('display', 'none');
+        $('p[name=texto_vender]').empty();
+        $('<p>O que quer vender?</p>').appendTo('p[name=texto_vender]');
         vender();
         $('#paes').css('display', 'block');
         $('#calendario').slideUp();
@@ -257,7 +260,6 @@ $(document).ready(function(){
         $('#estoque').slideUp();
         $('#caixa').slideUp();
         $('#forno_cheio').slideUp();
-        $('#selecao_de_paes').slideDown();
         $('#texto_assar').css('display', 'none');
         $('#texto_vender').css('display', 'block');
         $('#texto_forno').css('display', 'none');
@@ -266,13 +268,13 @@ $(document).ready(function(){
         $('#texto_calendario').css('display', 'none');
     })
     $('#verificar_estoque').click(function(e){
+        $('form[name=numero_de_paes]').css('display', 'none');
         verificarEstoque();
         $('#paes').css('display', 'none');
         $('#calendario').slideUp();
         $('#forno_vazio').slideUp();
         $('#caixa').slideUp();
         $('#forno_cheio').slideUp();
-        $('#selecao_de_paes').slideUp();
         $('#estoque').slideDown();
         $('#texto_assar').css('display', 'none');
         $('#texto_vender').css('display', 'none');
@@ -282,12 +284,12 @@ $(document).ready(function(){
         $('#texto_calendario').css('display', 'none');
     })
     $('#verificar_forno').click(function(e){
+        $('form[name=numero_de_paes]').css('display', 'none');
         VerificarForno();
         $('#paes').css('display', 'none');
         $('#calendario').slideUp();
         $('#caixa').slideUp();
         $('#forno_cheio').slideUp();
-        $('#selecao_de_paes').slideUp();
         $('#estoque').slideUp();
         $('#forno_vazio').slideDown();
         $('#texto_assar').css('display', 'none');
@@ -298,11 +300,11 @@ $(document).ready(function(){
         $('#texto_calendario').css('display', 'none');
     })
     $('#verificar_caixa').click(function(e){
+        $('form[name=numero_de_paes]').css('display', 'none');
         verificarCaixa();
         $('#paes').css('display', 'none');
         $('#calendario').slideUp();
         $('#forno_cheio').slideUp();
-        $('#selecao_de_paes').slideUp();
         $('#estoque').slideUp();
         $('#forno_vazio').slideUp();
         $('#caixa').slideDown();
@@ -314,10 +316,10 @@ $(document).ready(function(){
         $('#texto_calendario').css('display', 'none');
     })
     $('#fechar_por_hoje').click(function(e){
+        $('form[name=numero_de_paes]').css('display', 'none');
         dormir();
         $('#paes').css('display', 'none');
         $('#forno_cheio').slideUp();
-        $('#selecao_de_paes').slideUp();
         $('#estoque').slideUp();
         $('#forno_vazio').slideUp();
         $('#caixa').slideUp();
