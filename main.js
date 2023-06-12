@@ -2,6 +2,17 @@ let tipo1 = 0, tipo2 = 0, tipo3 = 0, estoqueTipo1 = 600, estoqueTipo2 = 200, est
 
 
 $(document).ready(function(){
+
+    $('input[name=receber_numero_de_paes_franceses]').mask('00', {
+        placeholder: 'Exemplo: 15'
+    })
+    $('input[name=receber_numero_de_baguetes]').mask('00', {
+        placeholder: 'Exemplo: 15'
+    })
+    $('input[name=receber_numero_de_massinhas_doces]').mask('00', {
+        placeholder: 'Exemplo: 15'
+    })
+
     function dormir(){
         dia+= 1;
         estoqueTipo1 = 600;
