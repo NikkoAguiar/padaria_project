@@ -28,6 +28,7 @@ header img{
 }
 
 header h1{
+    font-family: pacifico, sans-serif;
     color: ghostwhite;
 }
 
@@ -185,6 +186,10 @@ p{
     color: ghostwhite;
     background-color: #FF8B35;
     border-radius: 30px;
+}
+
+#texto_calendario{
+    padding: 8px;
 }
 
 @media screen and (min-width: 641px) and (max-width: 1023px) {
