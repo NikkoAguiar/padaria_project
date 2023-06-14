@@ -34,7 +34,7 @@ $(document).ready(function(){
 
     function VerificarForno(){
         $('#texto_forno').empty();
-        $(`<p>O forno contém ${forno} pães, contendo: ${tipo1} pães franceses, ${tipo2} massinhas doces e ${tipo3} baguetes.</p>`).appendTo('#texto_forno');
+        $(`<p>O forno está com ${forno} pães, contendo: ${tipo1} pães franceses, ${tipo2} massinhas doces e ${tipo3} baguetes.</p>`).appendTo('#texto_forno');
     }
 
     function verificarCaixa(){

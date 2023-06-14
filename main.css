@@ -264,4 +264,8 @@ p{
         margin: 15px;
         text-align: justify;
     }
+
+    #bandeira{
+        height: 35px;
+    }
 }
